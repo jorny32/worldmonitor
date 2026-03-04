@@ -39,6 +39,11 @@
     "test:e2e:visual:update:tech": "cross-env VITE_VARIANT=tech playwright test -g \"matches golden screenshots per layer and zoom\" --update-snapshots",
     "test:e2e:visual:update": "npm run test:e2e:visual:update:full && npm run test:e2e:visual:update:tech",
     "desktop:dev": "npm run version:sync && cross-env VITE_DESKTOP_RUNTIME=1 tauri dev -f devtools",
+
+    "app": "npm run version:sync && cross-env VITE_VARIANT=full VITE_DESKTOP_RUNTIME=1 tauri dev --config src-tauri/tauri.kiosk.conf.json",
+    "app:tech": "npm run version:sync && cross-env VITE_VARIANT=tech VITE_DESKTOP_RUNTIME=1 tauri dev --config src-tauri/tauri.kiosk.conf.json",
+    "app:finance": "npm run version:sync && cross-env VITE_VARIANT=finance VITE_DESKTOP_RUNTIME=1 tauri dev --config src-tauri/tauri.kiosk.conf.json",
+
     "desktop:build:full": "npm run version:sync && cross-env VITE_VARIANT=full VITE_DESKTOP_RUNTIME=1 tauri build",
     "desktop:build:tech": "npm run version:sync && cross-env VITE_VARIANT=tech VITE_DESKTOP_RUNTIME=1 tauri build --config src-tauri/tauri.tech.conf.json",
     "desktop:build:finance": "npm run version:sync && cross-env VITE_VARIANT=finance VITE_DESKTOP_RUNTIME=1 tauri build --config src-tauri/tauri.finance.conf.json",
